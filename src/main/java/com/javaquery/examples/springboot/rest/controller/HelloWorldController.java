@@ -38,10 +38,11 @@ public class HelloWorldController {
 	 */
 	@GetMapping("/hello")
 	public ResponseEntity<?> sayHello(
-			@RequestParam @Size(min= 1, max = 100 , message = "firstname length must be between 1 and 100") String firstname,
+			@RequestParam @Size(min= 1, max = 5 , message = "firstname length must be between 1 and 5") String firstname,
+			@RequestParam String middlename,
 			@RequestParam(required = false) String lastname){
 		/* check lastname value */
 		lastname = lastname != null ? lastname : "{lastname-not-found}";
-		return ResponseEntity.ok("Hello " + firstname + " " + lastname);
+		return ResponseEntity.ok("Hello " + firstname + " " + middlename + " " + lastname);
 	}
 }
