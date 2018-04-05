@@ -5,6 +5,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
+ * Object to interact using rest api.
  * @author javaQuery
  * @since 2018-02-18
  */

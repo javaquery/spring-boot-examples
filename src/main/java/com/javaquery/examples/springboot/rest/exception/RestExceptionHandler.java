@@ -51,4 +51,18 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler{
 			return new ResponseEntity<>(new ErrorResponse<>(Arrays.asList(ex.getMessage())), HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	/**
+	 * @param ex
+	 * @param request
+	 * @return
+	 */
+	@ExceptionHandler(EntityNotFoundException.class)
+	protected ResponseEntity<?> handleEntityNotFoundException(EntityNotFoundException ex, HttpServletRequest request) {
+		try {
+			return new ResponseEntity<>(new ErrorResponse<>(Arrays.asList(ex.getMessage())), HttpStatus.BAD_REQUEST);
+		} catch (Exception e) {
+			return new ResponseEntity<>(new ErrorResponse<>(Arrays.asList(ex.getMessage())), HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+	}
 }
