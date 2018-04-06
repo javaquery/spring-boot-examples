@@ -10,9 +10,11 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  * @author javaQuery
  * @since 2018-01-31
  * @github https://github.com/javaquery/spring-boot-examples
+ * 
+ * @change message internationalization (locale)
  */
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.javaquery.examples.springboot.rest" })
+@ComponentScan(basePackages = { "com.javaquery.examples.springboot.rest",  "com.javaquery.examples.springboot.main.config"})
 @EntityScan("com.javaquery.examples.springboot.model")
 @EnableJpaRepositories("com.javaquery.examples.springboot.model.repositories")
 public class Application {
