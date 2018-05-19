@@ -10,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 /**
  * @author javaQuery
  * @since 2018-02-18
+ * @github https://github.com/javaquery/spring-boot-examples
  */
 @Configuration
 public class ApplicationConfig extends WebMvcConfigurerAdapter{

@@ -43,12 +43,14 @@ public class LocaleController {
 	 * Validation parameter internationalization. 
 	 * @param firstname
 	 * @param lastname
+	 * @param notEmptyParam
 	 * @param locale
 	 * @return
 	 */
 	@GetMapping("/locale/param")
 	public ResponseEntity<?> parameterValidation(@Size(min = 1, max = 5, message = "firstname {javax.validation.constraints.Size.message}") @RequestParam("firstname") String firstname,
 			@NotEmpty(message = "lastname {org.hibernate.validator.constraints.NotEmpty.message}") @RequestParam("lastname") String lastname,
+			@NotEmpty(message = "{springboot.customerror}") String notEmptyParam,
 			Locale locale){
 		String localeHello = messageSource.getMessage("springboot.hello", null, locale);
 		return ResponseEntity.ok(localeHello + " " + firstname + " " + lastname);
