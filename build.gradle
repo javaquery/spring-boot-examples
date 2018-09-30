@@ -25,4 +25,7 @@ dependencies {
     // database dependencies
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     runtime('mysql:mysql-connector-java')
+    
+    //mongodb dependencies
+	compile('org.springframework.boot:spring-boot-starter-data-mongodb')
 }
